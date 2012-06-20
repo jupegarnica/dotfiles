@@ -62,8 +62,15 @@ defaults write com.apple.finder DisableAllAnimations -bool true
 # Show all filename extensions in Finder
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
-# Show status bar in Finder
+# Show status bar and path bar in Finder
 defaults write com.apple.finder ShowStatusBar -bool true
+defaults write com.apple.finder ShowPathbar -bool true
+
+# Show internal, external, network, and removable drives on the desktop.
+defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
+defaults write com.apple.finder ShowHardDrivesOnDesktop -bool true
+defaults write com.apple.finder ShowMountedServersOnDesktop -bool true
+defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 
 # Allow text selection in Quick Look
 defaults write com.apple.finder QLEnableTextSelection -bool true
@@ -103,12 +110,15 @@ defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
 chflags nohidden ~/Library
 
 # Hot corners
-# Top left screen corner → Start screen saver
-defaults write com.apple.dock wvous-tl-corner -int 5
+# Top left screen corner → Go to sleep
+defaults write com.apple.dock wvous-tl-corner -int 10
 defaults write com.apple.dock wvous-tl-modifier -int 0
 
 # Set the icon size of Dock items to 36 pixels
 defaults write com.apple.dock tilesize -int 36
+
+# Enable magnification of Dock items
+defaults write com.apple.dock magnification -bool true
 
 # Enable spring loading for all Dock items
 defaults write com.apple.dock enable-spring-load-actions-on-all-items -bool true
@@ -133,6 +143,9 @@ defaults write com.apple.dock showhidden -bool true
 
 # Enable iTunes track notifications in the Dock
 defaults write com.apple.dock itunes-notifications -bool true
+
+# Disable sorting spaces by most recently used
+defaults write com.apple.dock mru-spaces -bool false
 
 # Disable shadow in screenshots
 defaults write com.apple.screencapture disable-shadow -bool true
