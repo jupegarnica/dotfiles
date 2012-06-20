@@ -1,0 +1,29 @@
+# Automatic git conflict resolution using the configured mergetool. Run this
+# from the root of a conflicted git repo.
+alias automerge="git mergetool \`git diff --name-only\`"
+
+# Start and stop CrashPlan.
+alias crashplan-start="sudo launchctl load /Library/LaunchDaemons/com.crashplan.engine.plist"
+alias crashplan-stop="sudo launchctl unload /Library/LaunchDaemons/com.crashplan.engine.plist"
+
+# Run ElasticSearch.
+alias elasticsearch="elasticsearch -D es.config=/usr/local/Cellar/elasticsearch/0.19.2/config/elasticsearch.yml"
+
+# Don't wrap lines by default in less.
+alias less="less -S"
+
+# List files colorized in long format.
+alias ll="ls -lG"
+
+# List files colorized in column format.
+alias ls="ls -G"
+
+# Start an HTTP server on port 3000 in the current directory.
+alias serve="thin -R ~/src/scripts/serve.ru start"
+
+# Rsync shortcuts.
+alias sync-src-from-nostromo="rsync -avzhu --delete-during --executability nostromo.local:/Users/rgrove/src/ ~/src/"
+alias sync-src-to-nostromo="rsync -avzhu --delete-during --executability ~/src/ nostromo.local:/Users/rgrove/src/"
+
+# Nice WHOIS lookups.
+alias whois="whois -h whois-servers.net"

@@ -1,0 +1,19 @@
+[user]
+    name = Ryan Grove
+    email = ryan@wonko.com
+
+[color]
+    branch = auto
+    diff = auto
+    status = auto
+    ui = auto
+
+[core]
+    editor = subl -w
+    excludesfile = ~/.gitignore
+
+[mergetool]
+    keepBackup = true
+
+[push]
+    default = tracking
