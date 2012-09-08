@@ -1,6 +1,6 @@
 [user]
-    name = Ryan Grove
-    email = ryan@wonko.com
+	name = Ryan Grove
+	email = ryan@wonko.com
 
 [color]
     branch = auto
@@ -13,7 +13,7 @@
     excludesfile = ~/.gitignore
 
 [mergetool]
-    keepBackup = true
+	keepBackup = false
 
 [push]
     default = tracking
