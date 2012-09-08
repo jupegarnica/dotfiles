@@ -22,6 +22,8 @@ alias ls="ls -G"
 alias serve="thin -R ~/src/scripts/serve.ru start"
 
 # Rsync shortcuts.
+alias sync-src-from-ghostwheel="rsync -avzhu --delete-during --executability ghostwheel.local:/Users/rgrove/src/ ~/src/"
+alias sync-src-to-ghostwheel="rsync -avzhu --delete-during --executability ~/src/ ghostwheel.local:/Users/rgrove/src/"
 alias sync-src-from-nostromo="rsync -avzhu --delete-during --executability nostromo.local:/Users/rgrove/src/ ~/src/"
 alias sync-src-to-nostromo="rsync -avzhu --delete-during --executability ~/src/ nostromo.local:/Users/rgrove/src/"
 
