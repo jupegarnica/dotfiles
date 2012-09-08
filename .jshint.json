@@ -10,12 +10,13 @@
     "noarg":        true,   // true if arguments.caller and arguments.callee should be forbidden
     "noempty":      true,   // true if empty blocks should be forbidden
     "nomen":        false,  // true if initial or trailing underscore in identifiers should be forbidden
-    "onevar":       true,   // true if only one var statement per function should be allowed
+    "onevar":       false,  // true if only one var statement per function should be allowed
     "plusplus":     false,  // true if ++ and -- should not be allowed
     "regexp":       false,  // true if . and [^...] should not be allowed in RegExp literals
     "strict":       false,  // true if the ES5 "use strict"; pragma is required
     "trailing":     true,   // true if trailing whitespace should be forbidden
     "undef":        true,   // true if variables must be declared before used
+    "unused":       true,   // true to warn on variables that are defined but never used
     "white":        false,  // true if strict whitespace rules apply (see also 'indent' option)
 
     // relaxing options (false means potentially more warnings)
@@ -61,7 +62,7 @@
     // environments
 
     "browser":      true,   // true if the standard browser globals should be predefined
-    "devel":        true,   // true if functions like alert, confirm, console, prompt etc. are predefined
+    "devel":        false,  // true if functions like alert, confirm, console, prompt etc. are predefined
     "node":         false,  // true if Node.js globals should be predefined
     "nonstandard":  true,   // true to allow nonstandard but widely adopted globals like `escape` and `unescape`
     "rhino":        false   // true if the Rhino environment globals should be predefined
