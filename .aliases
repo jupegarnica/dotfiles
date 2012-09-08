@@ -26,6 +26,8 @@ alias sync-src-from-ghostwheel="rsync -avzhu --delete-during --executability gho
 alias sync-src-to-ghostwheel="rsync -avzhu --delete-during --executability ~/src/ ghostwheel.local:/Users/rgrove/src/"
 alias sync-src-from-nostromo="rsync -avzhu --delete-during --executability nostromo.local:/Users/rgrove/src/ ~/src/"
 alias sync-src-to-nostromo="rsync -avzhu --delete-during --executability ~/src/ nostromo.local:/Users/rgrove/src/"
+alias sync-src-from-sulaco="rsync -avzhu --delete-during --executability sulaco.local:/Users/rgrove/src/ ~/src/"
+alias sync-src-to-sulaco="rsync -avzhu --delete-during --executability ~/src/ sulaco.local:/Users/rgrove/src/"
 
 # Nice WHOIS lookups.
 alias whois="whois -h whois-servers.net"
