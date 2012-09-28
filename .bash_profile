@@ -1,3 +1,7 @@
+# Add tab completion for git. Needs to happen before the prompt is set in order
+# to ensure that __git_ps1 is available.
+source ~/bin/git-completion.bash
+
 # Load ~/.aliases, ~/.bash_prompt, ~/.exports, ~/.functions, and ~/.secret.
 # ~/.secret can be used for settings that shouldn't be committed to git.
 for file in ~/.{aliases,bash_prompt,exports,functions,secret}; do
@@ -11,9 +15,6 @@ export LANG="en_US"
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2)" scp sftp ssh
-
-# Add tab completion for git.
-source ~/bin/git-completion.bash
 
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
