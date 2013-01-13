@@ -12,11 +12,20 @@ alias elasticsearch="elasticsearch -D es.config=/usr/local/Cellar/elasticsearch/
 # Don't wrap lines by default in less.
 alias less="less -S"
 
+# Detect which `ls` flavor to use.
+if ls --color > /dev/null 2>&1; then
+    # GNU
+    colorflag="--color"
+else
+    # BSD
+    colorflag="-G"
+fi
+
 # List files colorized in long format.
-alias ll="ls -lG"
+alias ll="ls -l ${colorflag}"
 
 # List files colorized in column format.
-alias ls="ls -G"
+alias ls="ls ${colorflag}"
 
 # Start an HTTP server on port 3000 in the current directory.
 alias serve="thin -R ~/src/scripts/serve.ru start"
