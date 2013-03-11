@@ -2,6 +2,10 @@
 alias crashplan-start="sudo launchctl load /Library/LaunchDaemons/com.crashplan.engine.plist"
 alias crashplan-stop="sudo launchctl unload /Library/LaunchDaemons/com.crashplan.engine.plist"
 
+# Rebuild the Launch Services database and get rid of duplicates in the
+# "Open With" submenu.
+alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user'
+
 # Don't wrap lines by default in less.
 alias less="less -S"
 
@@ -33,7 +37,3 @@ alias sync-src-to-sulaco="rsync -avzhu --delete-during --executability ~/src/ su
 
 # Nice WHOIS lookups.
 alias whois="whois -h whois-servers.net"
-
-# Rebuild the Launch Services database and get rid of duplicates in the
-# "Open With" submenu.
-alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user'
