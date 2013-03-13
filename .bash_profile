@@ -1,6 +1,12 @@
 # Add tab completion for git. Needs to happen before the prompt is set in order
 # to ensure that __git_ps1 is available.
-source ~/bin/git-completion.bash
+if [ -f /usr/local/etc/bash_completion.d/.git-completion.bash ]; then
+    source /usr/local/etc/bash_completion.d/git-completion.bash
+fi
+
+if [ -f /usr/local/etc/bash_completion.d/git-prompt.sh ]; then
+  source /usr/local/etc/bash_completion.d/git-prompt.sh
+fi
 
 # Load ~/.aliases, ~/.bash_prompt, ~/.exports, ~/.functions, and ~/.secret.
 # ~/.secret can be used for settings that shouldn't be committed to git.
@@ -21,9 +27,11 @@ export LANG="en_US"
 
 # {{{
 # Node Completion - Auto-generated, do not touch.
-shopt -s progcomp
-for f in $(command ls ~/.node-completion); do
-  f="$HOME/.node-completion/$f"
-  test -f "$f" && . "$f"
-done
+if [ -d ~/.node-completion ]; then
+  shopt -s progcomp
+  for f in $(command ls ~/.node-completion); do
+    f="$HOME/.node-completion/$f"
+    test -f "$f" && . "$f"
+  done
+fi
 # }}}
