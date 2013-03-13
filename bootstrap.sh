@@ -1,6 +1,6 @@
 #!/bin/bash
 cd "$(dirname "$0")"
-git pull
+git pull origin master
 
 for file in .*; do
     if [ -f $file ] && [ -r $file ]; then
