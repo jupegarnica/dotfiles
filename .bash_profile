@@ -1,6 +1,6 @@
 # Add tab completion for git. Needs to happen before the prompt is set in order
 # to ensure that __git_ps1 is available.
-if [ -f /usr/local/etc/bash_completion.d/.git-completion.bash ]; then
+if [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
     source /usr/local/etc/bash_completion.d/git-completion.bash
 fi
 
