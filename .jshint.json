@@ -48,7 +48,6 @@
 
     // other options
 
-    "indent":       4,      // number of spaces that should be used for indentation - used only if 'white' option is set
     "maxerr":       50,     // maximum number of warnings reported (per file)
     "maxlen":       150,    // maximum line length
     "passfail":     false,  // true if the scan should stop on first error (per file)
