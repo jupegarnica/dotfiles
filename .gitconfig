@@ -1,31 +1,39 @@
 [user]
-	name = Ryan Grove
-	email = ryan@wonko.com
+    name = Ryan Grove
+    email = ryan@wonko.com
 
 [color]
     branch = auto
     diff = auto
+    interactive = auto
     status = auto
     ui = auto
 
 [core]
     editor = subl -w
     excludesfile = ~/.gitignore
+    quotepath = false
 
 [mergetool]
-	keepBackup = false
-	prompt = false
+    keepBackup = false
+    prompt = false
 
 [push]
-    default = tracking
-[difftool "Kaleidoscope"]
-	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
-[diff]
-	tool = Kaleidoscope
+    default = upstream
+
 [difftool]
-	prompt = false
+    prompt = false
+
+[difftool "Kaleidoscope"]
+    cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+
+[diff]
+    tool = Kaleidoscope
+
 [mergetool "Kaleidoscope"]
-	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-	trustExitCode = true
+    cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+    trustExitCode = true
+
 [merge]
-	tool = Kaleidoscope
+    renamelimit = 5000
+    tool = Kaleidoscope
