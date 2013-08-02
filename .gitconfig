@@ -1,7 +1,3 @@
-[user]
-    name = Ryan Grove
-    email = ryan@wonko.com
-
 [color]
     branch = auto
     diff = auto
@@ -14,13 +10,6 @@
     excludesfile = ~/.gitignore
     quotepath = false
 
-[mergetool]
-    keepBackup = false
-    prompt = false
-
-[push]
-    default = upstream
-
 [difftool]
     prompt = false
 
@@ -30,6 +19,10 @@
 [diff]
     tool = Kaleidoscope
 
+[mergetool]
+    keepBackup = false
+    prompt = false
+
 [mergetool "Kaleidoscope"]
     cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
     trustExitCode = true
@@ -37,3 +30,10 @@
 [merge]
     renamelimit = 5000
     tool = Kaleidoscope
+
+[push]
+    default = upstream
+
+[user]
+    name = Ryan Grove
+    email = ryan@wonko.com
