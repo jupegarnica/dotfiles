@@ -2,6 +2,9 @@
 alias crashplan-start="sudo launchctl load /Library/LaunchDaemons/com.crashplan.engine.plist"
 alias crashplan-stop="sudo launchctl unload /Library/LaunchDaemons/com.crashplan.engine.plist"
 
+# Get detailed info for an HTTP request with Curl.
+alias curl-details='curl -s -o /dev/null -w "@$HOME/.curl-format"'
+
 # Rebuild the Launch Services database and get rid of duplicates in the
 # "Open With" submenu.
 alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user'
