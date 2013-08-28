@@ -1,3 +1,14 @@
+[user]
+	name = Ryan Grove
+	email = ryan@wonko.com
+
+[alias]
+    chm = checkout master
+    chi = checkout integration
+    pum = pull upstream master
+    pui = pull upstream integration
+    s   = status
+
 [color]
     branch = auto
     diff = auto
