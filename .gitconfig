@@ -1,6 +1,6 @@
 [user]
-	name = Ryan Grove
-	email = ryan@wonko.com
+    name = Ryan Grove
+    email = ryan@wonko.com
 
 [alias]
     chm = checkout master
@@ -30,6 +30,10 @@
 [diff]
     tool = Kaleidoscope
 
+[merge]
+    renamelimit = 5000
+    tool = Kaleidoscope
+
 [mergetool]
     keepBackup = false
     prompt = false
@@ -38,13 +42,5 @@
     cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
     trustExitCode = true
 
-[merge]
-    renamelimit = 5000
-    tool = Kaleidoscope
-
 [push]
     default = upstream
-
-[user]
-    name = Ryan Grove
-    email = ryan@wonko.com
