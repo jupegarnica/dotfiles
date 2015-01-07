@@ -1,6 +1,6 @@
 [user]
-    name = Ryan Grove
-    email = ryan@wonko.com
+	name = Ryan Grove
+	email = ryan@wonko.com
 
 [alias]
     chm = checkout master
@@ -35,12 +35,11 @@
     tool = Kaleidoscope
 
 [mergetool]
-    keepBackup = false
+	keepBackup = false
     prompt = false
 
 [mergetool "Kaleidoscope"]
     cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
     trustExitCode = true
-
 [push]
-    default = upstream
+	default = simple
