@@ -19,6 +19,16 @@ unset file
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US"
 
+# SSH agent
+eval $(ssh-agent)
+
+function cleanup_ssh_agent {
+  echo "Killing SSH-Agent"
+  kill -9 $SSH_AGENT_PID
+}
+
+trap cleanup_ssh_agent EXIT
+
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2)" scp sftp ssh
 
