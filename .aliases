@@ -1,7 +1,3 @@
-# Start and stop CrashPlan.
-alias crashplan-start="sudo launchctl load /Library/LaunchDaemons/com.crashplan.engine.plist"
-alias crashplan-stop="sudo launchctl unload /Library/LaunchDaemons/com.crashplan.engine.plist"
-
 # Get detailed info for an HTTP request with Curl.
 alias curl-details='curl -s -o /dev/null -w "@$HOME/.curl-format"'
 
@@ -12,12 +8,10 @@ alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/
 # Don't wrap lines by default in less.
 alias less="less -S"
 
-# Detect which `ls` flavor to use.
-if ls --color > /dev/null 2>&1; then
-    # GNU
+# Detect which `ls` flavor is in use
+if ls --color > /dev/null 2>&1; then # GNU `ls`
     colorflag="--color"
-else
-    # BSD
+else # OS X `ls`
     colorflag="-G"
 fi
 
@@ -26,6 +20,21 @@ alias ll="ls -l ${colorflag}"
 
 # List files colorized in column format.
 alias ls="ls ${colorflag}"
+
+# Enable aliases to be sudo’ed
+alias sudo='sudo '
+
+# Flush Directory Service cache
+alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
+
+# Clean up LaunchServices to remove duplicates in the “Open With” menu
+alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
+
+# Lock the screen (when going AFK)
+alias lock="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+
+# Reload the shell (i.e. invoke as a login shell)
+alias reload="exec $SHELL -l"
 
 # Start an HTTP server on port 3000 in the current directory.
 alias serve="thin -R ~/src/scripts/serve.ru start"
@@ -37,6 +46,3 @@ alias sync-src-from-nostromo="rsync -avzhu --delete-during --executability nostr
 alias sync-src-to-nostromo="rsync -avzhu --delete-during --executability ~/src/ nostromo.local:/Users/rgrove/src/"
 alias sync-src-from-sulaco="rsync -avzhu --delete-during --executability sulaco.local:/Users/rgrove/src/ ~/src/"
 alias sync-src-to-sulaco="rsync -avzhu --delete-during --executability ~/src/ sulaco.local:/Users/rgrove/src/"
-
-# Nice WHOIS lookups.
-alias whois="whois -h whois-servers.net"

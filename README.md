@@ -25,11 +25,11 @@ Warning
 -------
 
 I maintain this repo for my own use, so there are some things in here that are
-specific to me (like my git config). You'll want to change things.
+specific to me (like my `.gitconfig`). You'll need to change things.
 
 
 Thanks
 ------
 
 Many thanks to [Mathias Bynens](https://github.com/mathiasbynens/dotfiles),
-whose dotfiles I plundered mercilessly.
+whose dotfiles I plundered (and continue to plunder) mercilessly.
