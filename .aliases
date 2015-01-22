@@ -24,6 +24,9 @@ alias ls="ls ${colorflag}"
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
 
+# Do what I fucking tell you to, machine.
+alias fucking='sudo '
+
 # Flush Directory Service cache
 alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
 
