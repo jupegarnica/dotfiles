@@ -36,6 +36,9 @@ alias lock="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resourc
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec $SHELL -l"
 
+# More useful traceroute.
+alias traceroute="traceroute -a -e -q 1 "
+
 # Start an HTTP server on port 3000 in the current directory.
 alias serve="thin -R ~/src/scripts/serve.ru start"
 
