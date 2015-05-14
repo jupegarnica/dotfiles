@@ -17,7 +17,7 @@
     ui = auto
 
 [core]
-    editor = atom
+    editor = atom -w
     excludesfile = ~/.gitignore
     quotepath = false
 
