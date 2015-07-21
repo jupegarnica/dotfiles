@@ -1,5 +1,4 @@
-# Add `~/bin` to the `$PATH`
-export PATH="$HOME/bin:$PATH";
+export PATH="$HOME/bin:/usr/local/sbin:$(brew --prefix homebrew/php/php56)/bin:$PATH";
 
 # Add tab completion for git. Needs to happen before the prompt is set in order
 # to ensure that __git_ps1 is available.

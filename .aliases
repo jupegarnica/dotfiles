@@ -3,7 +3,7 @@ alias curl-details='curl -s -o /dev/null -w "@$HOME/.curl-format"'
 
 # Rebuild the Launch Services database and get rid of duplicates in the
 # "Open With" submenu.
-alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user'
+alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder'
 
 # Don't wrap lines by default in less.
 alias less="less -S"
@@ -30,9 +30,6 @@ alias fucking='sudo '
 # Flush Directory Service cache
 alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
 
-# Clean up LaunchServices to remove duplicates in the “Open With” menu
-alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
-
 # Lock the screen (when going AFK)
 alias lock="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
@@ -44,7 +41,3 @@ alias traceroute="traceroute -a -e -q 1 "
 
 # Start an HTTP server on port 3000 in the current directory.
 alias serve="thin -R ~/src/scripts/serve.ru start"
-
-# Rsync shortcuts.
-alias sync-src-from-sulaco="rsync -avzhu --delete-during --executability sulaco.local:/Users/rgrove/src/ ~/src/"
-alias sync-src-to-sulaco="rsync -avzhu --delete-during --executability ~/src/ sulaco.local:/Users/rgrove/src/"
