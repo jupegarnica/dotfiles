@@ -1,4 +1,9 @@
-export PATH="$HOME/bin:/usr/local/sbin:$(brew --prefix homebrew/php/php56)/bin:$PATH";
+export PATH="$HOME/bin:/usr/local/sbin:$PATH";
+
+# Homebrew path stuff.
+if which brew > /dev/null; then
+  export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
+fi;
 
 # Add tab completion for git. Needs to happen before the prompt is set in order
 # to ensure that __git_ps1 is available.
@@ -17,18 +22,8 @@ for file in ~/.{path,bash_prompt,exports,aliases,functions,secret}; do
 done
 unset file
 
-# Append to the Bash history file, rather than overwriting it
+# Append to the Bash history file rather than overwriting it.
 shopt -s histappend;
-
-# Add tab completion for many Bash commands
-if which brew > /dev/null && [ -f "$(brew --prefix)/etc/bash_completion" ]; then
-  source "$(brew --prefix)/etc/bash_completion";
-elif [ -f /etc/bash_completion ]; then
-  source /etc/bash_completion;
-fi;
-
-# Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
-[ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
 
 # SSH agent
 eval $(ssh-agent)
@@ -41,7 +36,19 @@ function cleanup_ssh_agent {
 trap cleanup_ssh_agent EXIT
 
 # rbenv
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+if which rbenv > /dev/null; then
+  eval "$(rbenv init -)"
+fi
+
+# Add tab completion for many Bash commands
+if which brew > /dev/null && [ -f "$(brew --prefix)/etc/bash_completion" ]; then
+  source "$(brew --prefix)/etc/bash_completion";
+elif [ -f /etc/bash_completion ]; then
+  source /etc/bash_completion;
+fi;
+
+# Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
+[ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
 
 # {{{
 # Node Completion - Auto-generated, do not touch.

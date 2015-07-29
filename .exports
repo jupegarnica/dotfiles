@@ -1,5 +1,11 @@
-# Make Sublime Text the default editor.
-export EDITOR="subl -w"
+# Set the default editor.
+if which subl > /dev/null; then
+  # Sublime Text
+  export EDITOR="subl -w"
+else
+  # Nano (that's right, haters)
+  export EDITOR="nano -w"
+fi;
 
 # Increase Bash history size. Allow 32³ entries; the default is 500.
 export HISTSIZE='32768';
