@@ -1,12 +1,12 @@
 [user]
-	name = Ryan Grove
-	email = ryan@wonko.com
+	name = Juan Garnica
+	email = jupegarnica@gmail.com
 
 [alias]
     chm = checkout master
-    chi = checkout integration
+    chd = checkout dev
     pum = pull upstream master
-    pui = pull upstream integration
+    pud = pull upstream dev
     s   = status
 
 [color]
@@ -17,7 +17,7 @@
     ui = auto
 
 [core]
-    editor = subl -w
+    editor = atom -w
     excludesfile = ~/.gitignore
     quotepath = false
 
@@ -29,17 +29,3 @@
 
 [diff]
     tool = Kaleidoscope
-
-[merge]
-    renamelimit = 5000
-    tool = Kaleidoscope
-
-[mergetool]
-	keepBackup = false
-    prompt = false
-
-[mergetool "Kaleidoscope"]
-    cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-    trustExitCode = true
-[push]
-	default = simple

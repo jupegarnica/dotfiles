@@ -16,7 +16,7 @@ else # OS X `ls`
 fi
 
 # List files colorized in long format.
-alias ll="ls -l ${colorflag}"
+alias ll="ls -al ${colorflag}"
 
 # List files colorized in column format.
 alias ls="ls ${colorflag}"
@@ -40,4 +40,4 @@ alias reload="exec $SHELL -l"
 alias traceroute="traceroute -a -e -q 1 "
 
 # Start an HTTP server on port 3000 in the current directory.
-alias serve="thin -R ~/src/scripts/serve.ru start"
+alias serve="http-server -a localhost -p 8000 -c-1"
