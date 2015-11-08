@@ -1,5 +1,4 @@
-export PATH="$HOME/bin:/usr/local/sbin:$PATH";
-
+export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:$HOME/bin:/usr/local/sbin:$PATH";
 # Homebrew path stuff.
 if which brew > /dev/null; then
   export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
@@ -26,14 +25,14 @@ unset file
 shopt -s histappend;
 
 # SSH agent
-eval $(ssh-agent)
-
-function cleanup_ssh_agent {
-  echo "Killing SSH-Agent"
-  kill -9 $SSH_AGENT_PID
-}
-
-trap cleanup_ssh_agent EXIT
+# eval $(ssh-agent)
+#
+# function cleanup_ssh_agent {
+#   echo "Killing SSH-Agent"
+#   kill -9 $SSH_AGENT_PID
+# }
+#
+# trap cleanup_ssh_agent EXIT
 
 # rbenv
 if which rbenv > /dev/null; then
