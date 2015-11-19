@@ -29,4 +29,5 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWSTASHSTATE=1
 export GIT_PS1_SHOWUNTRACKEDFILES=1
 
-export PS1="${TITLEBAR}${BOLD_GREEN}\u@\h${RESET}:${BLUE}\w${MAGENTA}\$(__git_ps1 ' (%s)')${RESET}\$ "
+#export PS1="${TITLEBAR}${BOLD_GREEN}\u@\h${RESET}:${BLUE}\w${MAGENTA}\$(__git_ps1 ' (%s)')${RESET}\$ "
+export PS1="${BLUE}\w${MAGENTA}\$(__git_ps1 ' (%s)')${RESET}\$ "

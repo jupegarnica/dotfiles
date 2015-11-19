@@ -1,3 +1,18 @@
+
+## trufie stuff
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/mysql/bin:/usr/local/apache-ant/ant/bin:$PATH
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/home
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+##the sting stuff
+alias mysqlstart="mysql.server start"
+alias compassstart="cd ~/dev/thesting/extensions/frontend/compass/desktop/ ; compass watch &  cd ~/dev/thesting/extensions/frontend/compass/mobile/ ; compass watch"
+alias antcleanall="cd ~/dev/thesting/build/; ant clean all"
+alias hybrisstart="cd ~/dev/thesting/build/; ./starthybris.sh"
+alias tsinit="mysqlstart ; antcleanall ; compassstart & hybrisstart"
+alias syncfromupstream="cd ~/dev/thesting/ && git checkout develop && git pull --rebase upstream develop && git push origin develop"
+
 export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:$HOME/bin:/usr/local/sbin:$PATH";
 # Homebrew path stuff.
 if which brew > /dev/null; then
